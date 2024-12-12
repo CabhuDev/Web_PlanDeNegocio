@@ -418,12 +418,18 @@ body {
 
 
     /*----------------- Página de Detalle -----------------*/
+
+    .section-detail{
+        padding: 0rem;
+    }
+
     .card-detail {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: 
             "content"
             "img";
+        padding: 0;
     }
 
     .card-detail img {
