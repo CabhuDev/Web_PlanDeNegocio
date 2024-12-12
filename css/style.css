@@ -67,7 +67,7 @@ body {
 .main-header {
     border-radius: 50px;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr;
     justify-content: space-between;
     align-items: center;
     gap: 1%;
@@ -89,11 +89,21 @@ body {
     align-items: center;
     cursor: pointer;
 }
+
 .logo img {
     width: 100%;
     min-width: 50px;
     max-width: 90px;
     object-fit: contain;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    width: 100%; /* Asegura que la barra de navegación ocupe el 100% del ancho del contenedor */
+    overflow: hidden; /* Evita que el contenido se salga del contenedor */
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total */
 }
 
 .navbar ul {
@@ -107,13 +117,12 @@ body {
 .navbar ul li a {
     text-decoration: none;
     color: var(--blanco); /* Blanco */
-    font-weight: bold;
+    font-size: small;
 }
 
 .navbar ul li a:hover {
     color: var(--verde-azulado-claro); /* Verde Azulado Claro */
 }
-
 
 /*----------------- Estilo para el contenedor del dropdown -----------------*/
 .dropdown {
