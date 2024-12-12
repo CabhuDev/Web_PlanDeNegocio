@@ -148,6 +148,11 @@ body {
     display:block;
 }
 
+/* Botón de menú hamburguesa para móviles */
+.hamburguer-menu {
+    display: none;
+    cursor: pointer;
+}
 
 /*----------------- Section Styles -----------------*/
 .tarjetas{
@@ -320,4 +325,35 @@ body {
     color: var(--texto-claro);
     text-decoration: none;
     cursor: pointer;
+}
+
+
+@media (max-width: 620px) {
+
+    .main-header {
+        position: sticky;           /* Fija la cabecera en la parte superior de la ventana */
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .hamburguer-menu {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamburguer-menu img {
+        width: 20%;
+        height: auto;
+        object-fit: contain;            /* Mantiene la proporción correcta del logo */
+    }
+
+
 }
