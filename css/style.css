@@ -8,11 +8,15 @@
     --verde-oscuro: #064E4E;
     --fondo-oscuro: #121212; /* Nuevo color de fondo oscuro */
     --texto-claro: #E0E0E0; /* Nuevo color de texto claro */
+}
+
+/* Definición de variables de tamaño de texto */
+:root {
     --h1-font-size: 2.5rem;
-    --h1-color: var(--verde-cardenal);
     --h2-font-size: 2rem;
+    --h3-font-size: 1.8rem;
+    --h1-color: var(--verde-cardenal);
     --h2-color: var(--verde-azulado-claro);
-    --h3-font-size: 1.5rem;
     --h3-color: var(--blanco);
 }
 
@@ -108,20 +112,6 @@ body {
 
 .navbar ul li a:hover {
     color: var(--verde-azulado-claro); /* Verde Azulado Claro */
-}
-
-.cta-button .btn {
-    text-decoration: none;
-    color: var(--blanco); /* Blanco */
-    background-color: var(--verde-azulado-claro); /* Verde Azulado Claro */
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.cta-button .btn:hover {
-    background-color: var(--verde-oscuro); /* Verde Oscuro */
 }
 
 
@@ -265,28 +255,61 @@ body {
     border-radius: 20px;
 }
 
-/* Footer Styles */
+
+
+/*----------------- Footer Styles -----------------*/
+
 .footer-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    padding-bottom: 5%; /* Separación de la parte baja */
 }
 
 .footer-image {
     width: 100%;
 }
 
+.footer-title,
+.footer-button .btn,
 .footer-content {
     position: absolute;
-    bottom: 20px;
-    right: 25px;
+    right: 2%; /* Separación dinámica del margen derecho */
     text-align: right;
+    width: auto; /* Ajusta el ancho automáticamente */
+    box-sizing: border-box;
+}
+
+.footer-title {
+    top: 1rem; /* Ajusta la posición para apilar los elementos de arriba a abajo */
+    padding: 10px; /* Añade un poco de relleno */
+}
+
+.footer-button .btn {
+    top: 5rem; /* Ajusta la posición para evitar solapamiento */    text-decoration: none;
+    color: var(--fondo-oscuro);
+    background-color: var(--blanco); /* Verde Azulado Claro */
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    padding: 8px; /* Añade un poco de relleno */
+    font-size: smaller;
+    font-weight: normal;
+}
+
+.footer-button .btn:hover {
+    color: var(--blanco);
+    background-color: var(--gris-oscuro); /* Verde Oscuro */
+}
+
+.footer-content {
+    top: 8rem; /* Ajusta la posición para evitar solapamiento */
     color: var(--texto-claro);
     font-weight: 400;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Apila los elementos de arriba a abajo */
     gap: 25px;
-
 }
 
 .footer-content p {
