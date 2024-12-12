@@ -76,8 +76,8 @@ body {
     color: var(--blanco); /* Blanco */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
     position: fixed;
-    width: calc(100% - 40px); /* Ajustar el ancho para dejar espacio en los laterales */
-    margin: 20px 20px; /* Crear espacio de 20px en los laterales */
+    width: calc(90%); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 5% 5%; /* Crear espacio de 20px en los laterales */
     z-index: 1000;
     box-sizing: border-box;
     position: relative;
@@ -171,8 +171,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.05rem;
     padding: 1.05rem;
-    width: calc(100% - 40px); /* Ajustar el ancho para dejar espacio en los laterales */
-    margin: 20px 20px; /* Crear espacio de 20px en los laterales */
+    width: calc(90%); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 5% 5%x; /* Crear espacio de 20px en los laterales */
     box-sizing: border-box;
 }
 
@@ -247,7 +247,7 @@ body {
 }
 .card-detail {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     width: 100%;
     padding: 1.05rem;
     border-radius: 8px;
@@ -268,6 +268,7 @@ body {
     align-self: center; /* Centra la imagen verticalmente */
     border-radius: 20px;
 }
+
 
 
 
@@ -339,10 +340,29 @@ body {
 
 @media (max-width: 620px) {
 
+    :root {
+        --h1-font-size: 1.8rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+    }
+
+    h2 {
+        font-size: var(--h2-font-size);
+    }
+
+    h3 {
+        font-size: var(--h3-font-size);
+    }
+
+
     .main-header {
         position: sticky;           /* Fija la cabecera en la parte superior de la ventana */
         z-index: 1000;
-        width: 100%;
+        grid-template-columns: 1fr 1fr;
         top: 0;
     }
 
@@ -397,5 +417,22 @@ body {
     }
 
 
+    /*----------------- Página de Detalle -----------------*/
+    .card-detail {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "content"
+            "img";
+    }
+
+    .card-detail img {
+        grid-area: img;
+        width: 95%;
+    }
+
+    .card-content {
+        grid-area: content;
+    }
 
 }
