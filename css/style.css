@@ -1,0 +1,298 @@
+/* Definición de variables de colores */
+:root {
+    --verde-cardenal: #0C1A1A;
+    --verde-azulado-claro: #6ACFC7;
+    --blanco: #FFFFFF;
+    --gris-claro: #F2F2F2;
+    --gris-oscuro: #333333;
+    --verde-oscuro: #064E4E;
+    --fondo-oscuro: #121212; /* Nuevo color de fondo oscuro */
+    --texto-claro: #E0E0E0; /* Nuevo color de texto claro */
+    --h1-font-size: 2.5rem;
+    --h1-color: var(--verde-cardenal);
+    --h2-font-size: 2rem;
+    --h2-color: var(--verde-azulado-claro);
+    --h3-font-size: 1.5rem;
+    --h3-color: var(--blanco);
+}
+
+/* Estilos para h1, h2 y h3 */
+h1 {
+    font-size: var(--h1-font-size);
+    color: var(--h1-color);
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    color: var(--h2-color);
+    text-align: left;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+    color: var(--h3-color);
+    text-align: left;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo-oscuro); /* Fondo Oscuro */
+    color: var(--texto-claro); /* Texto Claro */
+
+    /* Añadir imagen de fondo */
+    background-image: url('../assets/img/back2.webp');
+    background-size: cover; /* Cubre todo el viewport */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Opcional: mantiene la imagen fija al hacer scroll */
+}
+
+
+
+/* Header Styles */
+.main-header {
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    padding: 35px 35px;
+    background-color: var(--verde-cardenal); /* Verde Cardenal */
+    color: var(--blanco); /* Blanco */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    position: fixed;
+    width: calc(100% - 40px); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 20px 20px; /* Crear espacio de 20px en los laterales */
+    z-index: 1000;
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid var(--verde-azulado-claro); /* Añadir un borde */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.logo img {
+    width: 100%;
+    min-width: 50px;
+    max-width: 90px;
+    object-fit: contain;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--blanco); /* Blanco */
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: var(--verde-azulado-claro); /* Verde Azulado Claro */
+}
+
+.cta-button .btn {
+    text-decoration: none;
+    color: var(--blanco); /* Blanco */
+    background-color: var(--verde-azulado-claro); /* Verde Azulado Claro */
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button .btn:hover {
+    background-color: var(--verde-oscuro); /* Verde Oscuro */
+}
+
+
+/* Estilo para el contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo para el contenido del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--verde-oscuro);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 10px; /* Separación del header */
+    min-width: 160px; /* Ancho mínimo para mejor visualización */
+    overflow: hidden; /* Para que los elementos internos respeten el border-radius */
+}
+
+/* Estilo para los enlaces dentro del dropdown */
+.dropdown-content a {
+    color: var(--verde-cardenal); /* Verde Cardenal */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Mostrar el contenido del dropdown al pasar el ratón por encima */
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+
+
+/* Section Styles */
+.tarjetas{
+    display: grid;
+    /* Crea una cuadrícula auto-ajustable donde cada columna tiene un mínimo de 300px y se expande hasta 1fr. 
+    Las columnas se generan automáticamente según el espacio disponible (auto-fill) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.05rem;
+    padding: 1.05rem;
+    margin: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--verde-cardenal);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--verde-azulado-claro);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+    background-color: var(--verde-oscuro);
+}
+
+/* Página de Detalle */
+
+.section-titles {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--verde-cardenal); /* Fondo oscuro para destacar */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+.section-titles h1 {
+    color: var(--blanco); /* Texto blanco */
+}
+
+.section-detail{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.05rem;
+    padding: 1.05rem;
+    margin: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.card-detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    padding: 1.05rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--verde-cardenal);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    
+}
+
+.card-detail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: auto; /* Centra la imagen horizontalmente */
+    align-self: center; /* Centra la imagen verticalmente */
+    border-radius: 20px;
+}
+
+/* Footer Styles */
+.footer-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.footer-image {
+    width: 100%;
+}
+
+.footer-content {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    text-align: right;
+    color: var(--texto-claro);
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-link {
+    color: var(--texto-claro);
+    text-decoration: none;
+    cursor: pointer;
+}
