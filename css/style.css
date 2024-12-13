@@ -331,11 +331,18 @@ details[open] .accordion-content {
 }
 
 /* Estilos base de la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
 table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin: 20px 0;
+    margin: 1.25rem 0;
     background: var(--verde-cardenal);
     border-radius: 10px;
     overflow: hidden;
@@ -345,7 +352,7 @@ table {
 /* Estilos para el título de la tabla */
 caption {
     font-size: 1.2rem;
-    padding: 15px;
+    padding: 0.9375rem;
     color: var(--verde-azulado-claro);
     background-color: var(--verde-cardenal);
     font-weight: bold;
@@ -355,7 +362,7 @@ caption {
 thead th {
     background-color: var(--verde-oscuro);
     color: var(--blanco);
-    padding: 15px;
+    padding: 0.6em;
     text-align: left;
     font-weight: bold;
     border-bottom: 2px solid var(--verde-azulado-claro);
@@ -363,7 +370,7 @@ thead th {
 
 /* Estilos para las celdas */
 tbody td {
-    padding: 12px 15px;
+    padding: 0.75px 0.9375px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     color: var(--blanco);
 }
@@ -556,15 +563,18 @@ tbody tr:last-child td {
         grid-area: content;
     }
 
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    .table-container {
+        margin: 0.5rem 0;
     }
     
-    caption, th, td {
-        padding: 8px;
-        font-size: 0.9rem;
+    table caption {
+        font-size: 1rem;
+    }
+    
+    table th,
+    table td {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 
 }
