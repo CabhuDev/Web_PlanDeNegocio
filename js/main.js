@@ -8,3 +8,4 @@ function toggleMenu() {
     // Alterna la clase 'show' en el elemento 'navbar'
     navbar.classList.toggle('show');
 }
+

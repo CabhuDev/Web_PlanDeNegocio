@@ -8,6 +8,8 @@
     --verde-oscuro: #064E4E;
     --fondo-oscuro: #121212; /* Nuevo color de fondo oscuro */
     --texto-claro: #E0E0E0; /* Nuevo color de texto claro */
+    --opacity-bg: 0.30;
+    --bg-translucent: rgba(255, 255, 255, var(--opacity-bg));
 }
 
 /* Definición de variables de tamaño de texto */
@@ -67,7 +69,7 @@ body {
 .main-header {
     border-radius: 50px;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 0.3fr 1fr;
     justify-content: space-between;
     align-items: center;
     gap: 1%;
@@ -102,7 +104,6 @@ body {
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Centra los elementos verticalmente */
     width: 100%; /* Asegura que la barra de navegación ocupe el 100% del ancho del contenedor */
-    overflow: hidden; /* Evita que el contenido se salga del contenedor */
     box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total */
 }
 
@@ -138,9 +139,11 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px; /* Bordes redondeados */
-    margin-top: 10px; /* Separación del header */
+    margin-top: 2%; /* Separación del header */
     min-width: 160px; /* Ancho mínimo para mejor visualización */
     overflow: hidden; /* Para que los elementos internos respeten el border-radius */
+    transform-origin: top right; /* Punto de origen para la transformación */
+    transform: translateX(-60%) translateY(0); /* Desplazamiento hacia la izquierda */
 }
 
 /* Estilo para los enlaces dentro del dropdown */
@@ -238,8 +241,8 @@ body {
 .section-detail{
     display: flex;
     flex-wrap: wrap;
-    gap: 1.05rem;
-    padding: 1.05rem;
+    gap: 1.02rem;
+    padding: 1.02rem;
     margin: 1rem;
     width: calc(100% - 40px); /* Ajustar el ancho para dejar espacio en los laterales */
     margin: 20px 20px; /* Crear espacio de 20px en los laterales */
@@ -256,7 +259,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out;
     will-change: transform;
-    
+    box-sizing: border-box;
 }
 
 .card-detail img {
@@ -271,6 +274,110 @@ body {
 
 
 
+/*------ Contenedor principal del item del acordeón /POLITICAS/ ------*/
+.accordion-item {
+    border: 1.5px solid var(--verde-oscuro);
+    border-radius:8px; /* Bordes redondeados */
+    margin-bottom: 0.5rem; /* Espaciado entre items */
+}
+
+/* Cabecera del acordeón - contiene el título y el icono */
+.accordion-header {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, icono a la derecha */
+    align-items: center; /* Alineación vertical centrada */
+    padding: 1rem;
+    background-color: var(--verde-cardenal);
+    border-radius:8px; /* Bordes redondeados */
+    color: var(--blanco);
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+/* Panel de contenido del acordeón */
+.accordion-content {
+    padding: 1rem;
+    background-color: var(--bg-translucent); /* Fondo semi-transparente */
+    /* Transición suave al expandir/contraer */
+    transition: all 0.3s ease-out;
+}
+
+/* Icono de flecha para indicar expansión/contracción */
+.accordion-icon::after {
+    content: '▼'; /* Unicode para flecha hacia abajo */
+    display: inline-block;
+    transition: transform 0.3s ease; /* Rotación suave */
+}
+
+/* Rotación del icono cuando el panel está abierto */
+details[open] .accordion-icon::after {
+    transform: rotate(180deg); /* Gira la flecha 180 grados */
+}
+
+/* Animación para el contenido cuando se expande */
+details[open] .accordion-content {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Keyframes para la animación de deslizamiento */
+@keyframes slideDown {
+    from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(-10px); /* Desplazamiento inicial hacia arriba */
+    }
+    to {
+        opacity: 1; /* Termina visible */
+        transform: translateY(0); /* Posición final */
+    }
+}
+
+/* Estilos base de la tabla */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    background: var(--verde-cardenal);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilos para el título de la tabla */
+caption {
+    font-size: 1.2rem;
+    padding: 15px;
+    color: var(--verde-azulado-claro);
+    background-color: var(--verde-cardenal);
+    font-weight: bold;
+}
+
+/* Estilos para los encabezados */
+thead th {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid var(--verde-azulado-claro);
+}
+
+/* Estilos para las celdas */
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--blanco);
+}
+
+/* Efecto hover en las filas */
+tbody tr:hover {
+    background-color: rgba(106, 207, 199, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Última fila sin borde inferior */
+tbody tr:last-child td {
+    border-bottom: none;
+}
 
 /*----------------- Footer Styles -----------------*/
 
@@ -371,6 +478,8 @@ body {
         display: none; /* Ocultar el menú por defecto */
     }
 
+    
+
     .hamburguer-menu {
         display: flex; /* Mostrar el menú hamburguesa en pantallas pequeñas */
         justify-content: flex-end;
@@ -417,6 +526,12 @@ body {
     }
 
 
+    /* Estilo para el contenido del dropdown */
+    .dropdown-content {
+    transform: translateX(55%) translateY(0); /* Desplazamiento hacia la izquierda */
+}
+
+
     /*----------------- Página de Detalle -----------------*/
 
     .section-detail{
@@ -439,6 +554,17 @@ body {
 
     .card-content {
         grid-area: content;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    caption, th, td {
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
 }
