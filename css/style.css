@@ -166,6 +166,69 @@ body {
     cursor: pointer;
 }
 
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+}
+
+/*----------------- Estilos para la página de inicio -----------------*/
+.welcome-index {
+    width: 90%;
+    margin: 4% 4%;
+    box-sizing: border-box;
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.2rem;
+}
+
+.info-card {
+    background: var(--verde-cardenal);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1.3px solid var(--verde-azulado-claro);
+}
+
+.info-card h3 {
+    color: var(--verde-azulado-claro);
+    margin-bottom: 1rem;
+}
+
+.info-card p, .info-card ul {
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+.mvv-content, .goals-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.mvv-item, .goal-item {
+    background: var(--bg-translucent);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.mvv-item h4, .goal-item h4 {
+    color: var(--verde-azulado-claro);
+    margin-bottom: 0.5rem;
+}
+
+.financial-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.financial-summary li {
+    margin-bottom: 0.8rem;
+}
+
 /*----------------- Section Styles -----------------*/
 .tarjetas{
     display: grid;
@@ -175,7 +238,7 @@ body {
     gap: 1.05rem;
     padding: 1.05rem;
     width: calc(90%); /* Ajustar el ancho para dejar espacio en los laterales */
-    margin: 5% 5%; /* Crear espacio de 20px en los laterales */
+    margin: 4% 4%; /* Crear espacio de 20px en los laterales */
     box-sizing: border-box;
 }
 
@@ -397,6 +460,8 @@ tbody tr:last-child td {
     border-bottom: none;
 }
 
+
+
 /*----------------- Footer Styles -----------------*/
 
 .footer-container {
@@ -596,6 +661,15 @@ tbody tr:last-child td {
     .logo-container img {
         width: 40px;
         margin: 0 auto;
+    }
+
+    /* Estilos para la página de inicio.html */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mvv-content, .goals-content {
+        grid-template-columns: 1fr;
     }
     
 

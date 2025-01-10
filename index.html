@@ -7,117 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo">
-            <a href="#">
-                <img src="assets/img/logo.webp" alt="Logo de la empresa CabHuDev">
-            </a>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="sub/idea.html">Idea de Negocio</a></li>
-                <li><a href="sub/promotor.html">Promotores</a></li>
-                <li><a href="sub/responsabilidad.html">Responsabilidad Social</a></li>
-                <li><a href="sub/analisis.html">Análisis de Entorno</a></li>
-                <li><a href="sub/dafo.html">DAFO</a></li>
-                <li><a href="sub/mkt.html">Marketing</a></li>
-                <li class="dropdown">
-                    <a href="sub/politicas.html" class="dropbtn">Políticas</a>
-                    <div class="dropdown-content">
-                        <a href="sub/politicas.html#producto">Producto</a>
-                        <a href="sub/politicas.html#precios">Precio</a>
-                        <a href="sub/politicas.html#distribucion">Distribución</a>
-                        <a href="sub/politicas.html#comunicacion">Comunicación</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+    <!-- Cabecera -->
+    <div id="header-section"></div>
 
-        <!-- Botón de menú hamburguesa (visible solo en móviles) -->
-        <div class="hamburguer-menu" onclick="toggleMenu()">
-            <img src="assets/icons/hamburguer-icon-menu_light.svg" alt="Menú">
-        </div>
-
-    </header>
+    <!-- Título de Web -->
+    <div class="section-titles">
+        <h1>Plan de Negocio Web Solutions</h1>
+        <h2>Desarrollo Web por Suscripción</h2>
+    </div>
 
     <main>
-        <section class="tarjetas">
-            <div class="card">
-                <img src="assets/img/idea.webp" alt="Idea de negocio" loading="lazy">
-                <div class="card-content">
-                    <h3>Idea de negocio</h3>
-                    <a href="sub/idea.html" class="card-link" target ="_blank" >Leer más</a>
-                </div>
-            </div>
-                <div class="card">
-                    <img src="assets/img/promotor.webp" alt="Promotores de negocio" loading="lazy">
-                    <div class="card-content">
-                        <h3>Promotores</h3>
-                        <a href="sub/promotor.html" class="card-link">Leer más</a>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <img src="assets/img/social.webp" alt= "Responsabilidad social de la empresa" loading="lazy">
-                    <div class="card-content">
-                        <h3>Responsabilidad social</h3>
-                        <a href="sub/responsabilidad.html" class="card-link">Leer más</a>
-                    </div>
-                </div>
+        <div class="main-content">
+            <!-- Página de inicio -->
+            <div id="welcome-section"></div>
 
-                <div class="card">
-                    <img src="assets/img/analisis.webp" alt="Análisis de entorno" loading="lazy">
-                    <div class="card-content">
-                        <h3>Análisis de entorno</h3>
-                        <a href="sub/analisis.html" class="card-link">Leer más</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/img/dafo.webp" alt="DAFO" loading="lazy">
-                    <div class="card-content">
-                        <h3>DAFO</h3>
-                        <a href="sub/dafo.html" class="card-link">Leer más</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/img/mkt.webp" alt="Marketing de la empresa" loading="lazy">
-                    <div class="card-content">
-                        <h3>Estrategia de Marketing</h3>
-                        <a href="sub/mkt.html" class="card-link">Leer más</a>
-                    </div>
-                </div> 
-
-                <div class="card">
-                    <img src="assets/img/politica.webp" alt="Política de empresa" loading="lazy">
-                    <div class="card-content">
-                        <h3>Política de empresa</h3>
-                        <a href="sub/politicas.html" class="card-link">Leer más</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+            <!-- Tarjetas del inicio -->
+            <div id="card-section"></div>   
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <img src="assets/img/banner_foot.webp" alt="datos de contacto de cahhuDev" class="footer-image">
-            <div class="footer-title">
-                <h3>PABLO CABELLO</h3>
-            </div>
-            <div class="footer-button">
-                <a href="https://github.com/CabhuDev" class="btn" target="_blank">DESARROLLADOR WEB</a>
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2020 CabHuDev</p>
-                <p>Web: <a href="https://github.com/CabhuDev" class="footer-link" target="_blank">www.cabhudev.com</a></p>
-                <p>Teléfono: <a href="tel:+34600518588" class="footer-link">+34 600518588</a></p>
-                <p>Email: <a href="mailto:pablo.cabello.hurtado@gmail.com" class="footer-link">pablo.cabello.hurtado@gmail.com</a></p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <div id="footer-section"></div>
 
     <script src="js/main.js"></script>
 </body>
