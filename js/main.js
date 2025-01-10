@@ -24,7 +24,7 @@ function toggleMenu() {
  * 
  * @throws {Error} Si la respuesta HTTP no es satisfactoria
  */
-function loadPage(arrayHtml) {
+function loadMainPage(arrayHtml) {
     // Iteramos cada archivo HTML del array usando forEach
     arrayHtml.forEach((htmlPage, index) => {
         // Verificamos la existencia del elemento contenedor
@@ -86,8 +86,9 @@ let promises = [];
 // Evento que se dispara cuando el DOM está completamente cargado
 // Inicia la carga de los archivos HTML
 document.addEventListener('DOMContentLoaded', function() {
-    loadPage(htmlList);
+    loadMainPage(htmlList);
 });
+
 
 //----------------------------------------------------------
 
