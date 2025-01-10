@@ -72,14 +72,14 @@ body {
     grid-template-columns: 0.3fr 1fr;
     justify-content: space-between;
     align-items: center;
-    gap: 1%;
-    padding: 0.7rem;
+    gap: 0.7%;
+    padding: 0.5rem;
     background-color: var(--verde-cardenal); /* Verde Cardenal */
     color: var(--blanco); /* Blanco */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
     position: fixed;
     width: calc(90%); /* Ajustar el ancho para dejar espacio en los laterales */
-    margin: 5% 5%; /* Crear espacio de 20px en los laterales */
+    margin: 1% 5%; /* Crear espacio de 20px en los laterales */
     z-index: 1000;
     box-sizing: border-box;
     position: relative;
@@ -118,7 +118,7 @@ body {
 .navbar ul li a {
     text-decoration: none;
     color: var(--blanco); /* Blanco */
-    font-size: small;
+    font-size: 1rem;
 }
 
 .navbar ul li a:hover {
@@ -166,15 +166,31 @@ body {
     cursor: pointer;
 }
 
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-}
 
 /*----------------- Estilos para la página de inicio -----------------*/
+.title-web {
+    text-align: center;
+    padding: 1rem;
+    width: calc(96%); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 0% 0%; /* Crear espacio de 20px en los laterales */
+    background-color: var(--verde-cardenal); /* Fondo oscuro para destacar */
+}
+.title-web h1 {
+    color: var(--blanco); /* Texto blanco */
+}
+.title-web h2 {
+    text-align: center;
+}
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+}
+
 .welcome-index {
-    width: 90%;
-    margin: 4% 4%;
+    gap: 1.05rem;
+    padding: 1.05rem;
+    width: calc(96%); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 2% 2%; /* Crear espacio de 20px en los laterales */
     box-sizing: border-box;
 }
 
@@ -237,8 +253,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.05rem;
     padding: 1.05rem;
-    width: calc(90%); /* Ajustar el ancho para dejar espacio en los laterales */
-    margin: 4% 4%; /* Crear espacio de 20px en los laterales */
+    width: calc(92%); /* Ajustar el ancho para dejar espacio en los laterales */
+    margin: 2% 4%; /* Crear espacio de 20px en los laterales */
     box-sizing: border-box;
 }
 
@@ -262,13 +278,26 @@ body {
 }
 
 .card-content {
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;   
+    padding: 0.5rem;
+    box-sizing: border-box;
+    align-items: center;
 }
 
 .card-content h3 {
     color: var(--blanco);
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
+
+.card-content h4 {
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 
 .card-link {
     display: inline-block;
@@ -276,6 +305,7 @@ body {
     background-color: var(--verde-azulado-claro);
     color: var(--blanco);
     text-decoration: none;
+    text-align: center;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
