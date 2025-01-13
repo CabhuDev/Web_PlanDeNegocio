@@ -547,8 +547,8 @@ tbody tr:last-child td {
     color: var(--texto-claro);
     font-weight: 400;
     display: flex;
-    flex-direction: row; /* Apila los elementos de arriba a abajo */
-    gap: 25px;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .footer-content p {
@@ -590,11 +590,36 @@ tbody tr:last-child td {
         top: 0;
     }
 
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjetas{
+        display: grid;
+        /* Crea una cuadrícula auto-ajustable donde cada columna tiene un mínimo de 300px y se expande hasta 1fr. 
+        Las columnas se generan automáticamente según el espacio disponible (auto-fill) */
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 0.8rem;
+        padding: 0.8rem;
+        width: calc(92%); /* Ajustar el ancho para dejar espacio en los laterales */
+        margin: 2% 4%; /* Crear espacio de 20px en los laterales */
+        box-sizing: border-box;
+    }
+    
+    
+    .card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+    }
+
+
+
     /* Mostrar/ocultar menú en móviles */
     .navbar {
         display: none; /* Ocultar el menú por defecto */
     }
-
     
 
     .hamburguer-menu {
@@ -704,6 +729,15 @@ tbody tr:last-child td {
     
     .mvv-content, .goals-content {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        top: 8rem; /* Ajusta la posición para evitar solapamiento */
+        color: var(--texto-claro);
+        font-weight: 300;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
     
 
